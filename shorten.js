@@ -87,5 +87,5 @@ function shortenUrl(url) {
 }
 
 
-console.log(shortenUrl('hello.com'));
-console.log(retrieveShortenedUrl("sh.ly/18878-0"))
+console.log(shortenUrl('my-very-long-url.com'));
+console.log(retrieveShortenedUrl("sh.ly/43052-0"))
