@@ -1,10 +1,11 @@
 # Title
 Given any URL, shorten it and return a globally unique URL back to the user. Make sure to call out any assumptions and / or limitations in your solution.
 
-## Discussion
-At approximately sixty minutes, the functionality of the url shortening algorithm was complete. Ten more minutes were taken to get the node.js filesystem (fs) properly working, so that an array of shortened urls could be stored and retrieved. In this way, the program can be demonstrated as fully functional.
+## Usage
+The program is a simple script. A function at the bottom of the script has a parameter in which the string of the full url may be input. The script may then be run in node.j, using `node shorten.js`. Warning: there is still a file system bug present: currently the file system will overwrite the entire hash array and any previously stored urls (this will result in an error if you try to retrieve a different url than the one being stored.)
 
-The program is a simple script. A function at the bottom of the script has a parameter in which the string of the full url may be input. The script may then be run in node.js. The file system will automatically store the url name in the hashArray.json. There is still a file system bug present: currently the file system will overwrite the entire hash array and any previously stored urls (which will result in an error if you try to retrieve a different url than the one being stored.)
+## Discussion
+At approximately sixty minutes, the functionality of the url shortening algorithm was complete. Ten more minutes were taken to get the node.js filesystem (fs) properly working, so that an array of shortened urls could be stored and retrieved. In this way, the program can be demonstrated as fully functional - The file system will automatically store the url name in the hashArray.json. 
 
 Comments give this explanation: Each url is first hashed to an integer value. The hash function was not optimized, and a better hash function can surely be looked up. The hash value is next appended to a short url, "sh.ly", similar to bit.ly. The hash value corresponds to an index of a hash array, in which it will be stored. Of course, there may be collisions, with urls sharing the same hash value. To account for this, a second array is stored at each hash array index. This second array will hold all colliding full urls. The shortened url also has the index of its location in the second array appended. 
 
